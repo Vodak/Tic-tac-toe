@@ -2,6 +2,7 @@
 [WIP] [C++] A little and funny game
 
 TO DO:
+
 -AI(): the AI plays / playerTurn = 1;
--multi() -> if (a) => playerTurn = 1;
+
 -win()
