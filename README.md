@@ -1,8 +1,7 @@
 # Tic-tac-toe
 [WIP] [C++] A little and funny game
+___
 
-TO DO:
-
--AI(): the AI plays / playerTurn = 1;
-
--win()
+Contributors:
+-Ceytix <ceytix@mailoo.org> (FR)
+-Ihfisk <> (FR)
