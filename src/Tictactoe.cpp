@@ -1,3 +1,16 @@
+/**
+ * ========================
+ * 
+ * Filename: Tictactoe.cpp
+ * 
+ * Author: Ceytix <ceytix@mailoo.org>
+ * 
+ * Description: Tictactoe class functions
+ * 
+ * Created: 29/04/15
+ * =========================
+ **/
+ 
 #include <ctime>
 #include <cstdlib>
 #include <string>
