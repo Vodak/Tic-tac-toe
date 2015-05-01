@@ -1,3 +1,16 @@
+/**
+ * ========================
+ * 
+ * Filename: main.cpp
+ * 
+ * Author: Ceytix <ceytix@mailoo.org>
+ * 
+ * Description: main file which starts the game
+ * 
+ * Created: 29/04/15
+ * =========================
+ **/
+ 
 #include <iostream>
 #include "Tictactoe.cpp"
 
@@ -7,10 +20,10 @@ int main()
 {
 	
 	char replay(' ');
+	Tictactoe game;
 		
 	do
 	{
-		Tictactoe game;
 		game.play();
 		
 		/** replay **/
