@@ -1,3 +1,16 @@
+/**
+ * ========================
+ * 
+ * Filename: Tictactoe.h
+ * 
+ * Author: Ceytix <ceytix@mailoo.org>
+ * 
+ * Description: Tictactoe class
+ * 
+ * Created: 29/04/15
+ * =========================
+ **/
+ 
 #ifndef TICTACTOE
 #define TICTACTOE
 
