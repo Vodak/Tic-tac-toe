@@ -6,4 +6,4 @@ Contributors:
 
 -Ceytix <ceytix@mailoo.org> (FR)
 
--Ihfisk <> (FR)
+-Ihfisk <ihfisk42@gmail.com> (FR)
