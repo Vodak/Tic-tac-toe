@@ -113,7 +113,7 @@ void Tictactoe::turn()
 	
 	do
 	{
-		cout << "Where do you want to play ?\nSay the line:" << endl;
+		cout << "Where do you want to play ?\nEnter the line:" << endl;
 	
 		do
 		{
@@ -121,7 +121,7 @@ void Tictactoe::turn()
 			line--;
 		}while(line<0 || line>2);
 		
-		cout << "Say the column:" << endl;
+		cout << "Enter the column:" << endl;
 		
 		do
 		{
