@@ -171,3 +171,102 @@ bool Tictactoe::multi()
 		return false;
 	}
 }
+
+/********
+* Win *
+********/
+
+void tictactoe::win()
+{
+
+    if(map[0][0] == map[0][1] == map[0][2])
+    {
+        if(map[0][0] == 'X')
+            return 1;
+            
+        else(map[0][0] == 'O')
+            return 2;
+            
+        else return 0;
+    }
+
+    else if(map[1][0] == map[1][1] == map[1][2])
+    {
+        if(map[1][0] == 'X')
+            return 1;
+            
+        else(map[1][0] == 'O')
+            return 2;
+            
+        else return 0;
+    }
+    
+    else if(map[2][0] == map[2][1] == map[2][2])
+    {
+        if(map[2][0] == 'X')
+            return 1;
+            
+        else(map[2][0] == 'O')
+            return 2;
+            
+        else return 0;
+    }
+    
+    else if(map[0][0] == map[1][0] == map[2][0])
+    {
+        if(map[0][0] == 'X')
+            return 1;
+            
+        else(map[0][0] == 'O')
+            return 2;
+            
+        else return 0;
+    }
+    
+    else if(map[0][1] == map[1][1] == map[2][1])
+    {
+        if(map[0][1] == 'X')
+            return 1;
+            
+        else(map[0][1] == 'O')
+            return 2;
+            
+        else return 0;
+    }
+    
+    else if(map[0][2] == map[1][2] == map[2][2])
+    {
+       if(map[0][2] == 'X')
+            return 1;
+            
+        else(map[0][2] == 'O')
+            return 2;
+            
+        else return 0; 
+    }
+    
+    else if(map[2][0] == map[1][1] == map[0][2])
+    {
+        if(map[2][0] == 'X')
+            return 1;
+            
+        else(map[2][0] == 'O')
+            return 2;
+            
+        else return 0;
+    }
+    
+    else if(map[0][0] == map[1][1] == map[2][2])
+    {
+        if(map[0][0] == 'X')
+            return 1;
+            
+        else(map[0][0] == 'O')
+            return 2;
+            
+        else return 0;
+    }
+    
+    else return 0;
+    
+}
