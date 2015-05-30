@@ -76,7 +76,7 @@ void Tictactoe::play()
 	{
 		cout << "The winner is the first player" << endl;
 	}
-	else
+	else if(win() == 2)
 	{
 		if(twoPlayers)
 		{
@@ -87,6 +87,12 @@ void Tictactoe::play()
 			cout << "The winner is the Artificial Intelligence" << endl;
 		}
 	}
+	
+	else
+	{
+		cout << "There is no winner" << endl;
+	}
+	
 }
 
 /*******
@@ -267,7 +273,12 @@ int Tictactoe::win()
         else return 0;
     }
     
-    else return 0;   
+    else if(map[0][0] != '*' && map[0][1] != '*' && map[0][2] != '*' && map[1][0] != '*' && map[1][1] != '*' && map[1][2] != '*' && map[2][0] != '*' && map[2][1] != '*' && map[2][2] != '*')
+    {
+    	return 3;
+    }
+    
+    else return 0;
 }
 
 /*****
