@@ -182,7 +182,7 @@ bool Tictactoe::multi()
 * Win *
 ********/
 
-int Tictactoe::win()
+void Tictactoe::win()
 {
 
     if(map[0][0] == map[0][1] && map[0][0] == map[0][2]) /* Test for every posibilities to win */
@@ -465,7 +465,7 @@ int Tictactoe::AI()
 
             else
                 {
-                    return 3;
+                    win() == 3;
                 }
         }
 	
