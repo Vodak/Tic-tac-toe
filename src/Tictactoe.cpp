@@ -285,7 +285,188 @@ int Tictactoe::win()
 * AI *
 *****/
 
-void Tictactoe::AI()
+int Tictactoe::AI()
 {
+	    /* This is a scan for every possibilities of win or counter possibilities for the enemy of win */
+
+    if(map[0][0] == map[0][1])
+        {
+            map[0][2] = 'O';
+            playerTurn = 1;
+        }
+
+    else if(map[0][1] == map[0][2])
+        {
+            map[0][0] = 'O';
+            playerTurn = 1;
+        }
+
+    else if(map[1][0] == map[1][1])
+        {
+            map[1][2] = 'O';
+            playerTurn = 1;
+        }
+
+    else if(map[1][1] == map[1][2])
+        {
+            map[1][0] = 'O';
+            playerTurn = 1;
+        }
+
+    else if(map[2][0] == map[2][1])
+        {
+            map[2][2] = 'O';
+            playerTurn = 1;
+        }
+
+    else if(map[2][1] == map[2][2])
+        {
+            map[2][0] = 'O';
+            playerTurn = 1;
+        }
+
+    else if(map[0][0] == map[1][0])
+        {
+            map[2][0] = 'O';
+            playerTurn = 1;
+        }
+
+    else if(map[1][0] == map[2][0])
+        {
+            map[0][0] = 'O';
+            playerTurn = 1;
+        }
+
+    else if(map[0][1] == map[1][1])
+        {
+            map[2][1] = 'O';
+            playerTurn = 1;
+        }
+
+    else if(map[1][1] == map[2][1])
+        {
+            map[0][1] = 'O';
+            playerTurn = 1;
+        }
+
+    else if(map[0][1] == map[2][1])
+        {
+            map[1][1] = 'O';
+            playerTurn = 1;
+        }
+
+    else if(map[1][2] == map[2][2])
+        {
+             map[0][2] = 'O';
+             playerTurn = 1;
+        }
+
+    else if(map[0][0] == map[0][2])
+        {
+            map[0][1] = 'O';
+            playerTurn = 1;
+        }
+
+    else if(map[1][0] == map[1][2])
+        {
+            map[1][1] = 'O';
+            playerTurn = 1;
+        }
+
+    else if(map[2][0] == map[2][2])
+        {
+            map[2][1] = 'O';
+            playerTurn = 1;
+        }
+
+    else if(map[0][0] == map[1][1])
+        {
+            map[2][2] = 'O';
+            playerTurn = 1;
+        }
+
+    else if(map[1][1] == map[2][2])
+        {
+            map[0][0] = 'O';
+            playerTurn = 1;
+        }
+
+    else if(map[0][0] == map[2][2])
+        {
+            map[0][1] = 'O';
+            playerTurn = 1;
+        }
+
+    else if(map[2][0] == map[1][1])
+        {
+            map[0][2] = 'O';
+            playerTurn = 1;
+        }
+
+    else if(map[1][1] == map[0][2])
+        {
+            map[2][0] = 'O';
+            playerTurn = 1;
+        }
+
+    else if(map[2][0] == map[0][2])
+        {
+            map[1][1] = 'O';
+            playerTurn = 1;
+        }
+
+    else if(map[0][0] == map[0][2])
+        {
+            map[0][1] = 'O';
+            playerTurn = 1;
+        }
+
+    else if(map[0][0] == map[2][0])
+        {
+            map[1][0] = 'O';
+            playerTurn = 1;
+        }
+
+    else if(map[0][2] == map[2][2])
+        {
+            map[1][2] = 'O';
+            playerTurn = 1;
+        }
+
+        /* End of the scan */
+
+    else
+        {
+            /* Now the AI will play on the edges */
+
+            if(map[0][0] != '*')
+                {
+                    map[0][0] = 'O';
+                    playerTurn = 1;
+                }
+
+            else if(map[2][0] != '*')
+                {
+                    map[2][0] = 'O';
+                    playerTurn = 1;
+                }
+
+            else if(map[2][2] != '*')
+                {
+                    map[2][2] = 'O';
+                    playerTurn = 1;
+                }
+
+            else if(map[0][2] != '*')
+                {
+                    map[0][2] = 'O';
+                    playerTurn = 1;
+                }
+
+            else
+                {
+                    return 3;
+                }
+        }
 	
 }
