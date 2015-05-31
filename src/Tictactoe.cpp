@@ -277,7 +277,7 @@ int Tictactoe::win()
 
 void Tictactoe::AI()
 {
-	    /* This is a scan for every possibilities of win or counter possibilities for the enemy of win */
+	    /* This is a scan for every possibilities of win and counter possibilities for the enemy of win */
 
     if(map[0][0] == map[0][1] && map[0][0] == 'O' && map[0][2] == '*')
         {
@@ -418,6 +418,150 @@ void Tictactoe::AI()
         }
 
     else if(map[0][2] == map[2][2] && map[0][2] == 'O' && map[1][2] == '*')
+        {
+            map[1][2] = 'O';
+            playerTurn = 1;
+        }
+        
+    else if(map[0][0] == map[0][1] && map[0][0] == 'X' && map[0][2] == '*')
+        {
+            map[0][2] = 'O';
+            playerTurn = 1;
+        }
+
+    else if(map[0][1] == map[0][2] && map[0][1] == 'X' && map[0][0] == '*')
+        {
+            map[0][0] = 'O';
+            playerTurn = 1;
+        }
+
+    else if(map[1][0] == map[1][1] && map[1][0] == 'X' && map[1][2] == '*')
+        {
+            map[1][2] = 'O';
+            playerTurn = 1;
+        }
+
+    else if(map[1][1] == map[1][2] && map[1][1] == 'X' && map[1][0] == '*')
+        {
+            map[1][0] = 'O';
+            playerTurn = 1;
+        }
+
+    else if(map[2][0] == map[2][1] && map[2][0] == 'X' && map[2][2] == '*')
+        {
+            map[2][2] = 'O';
+            playerTurn = 1;
+        }
+
+    else if(map[2][1] == map[2][2] && map[2][1] == 'X' && map[2][0] == '*')
+        {
+            map[2][0] = 'O';
+            playerTurn = 1;
+        }
+
+    else if(map[0][0] == map[1][0] && map[0][0] == 'X' && map[2][0] == '*')
+        {
+            map[2][0] = 'O';
+            playerTurn = 1;
+        }
+
+    else if(map[1][0] == map[2][0] && map[1][0] == 'X' && map[0][0] == '*')
+        {
+            map[0][0] = 'O';
+            playerTurn = 1;
+        }
+
+    else if(map[0][1] == map[1][1] && map[0][1] == 'X' && map[2][1] == '*')
+        {
+            map[2][1] = 'O';
+            playerTurn = 1;
+        }
+
+    else if(map[1][1] == map[2][1] && map[1][1] == 'X' && map[0][1] == '*')
+        {
+            map[0][1] = 'O';
+            playerTurn = 1;
+        }
+
+    else if(map[0][1] == map[2][1] && map[0][1] == 'X' && map[1][1] == '*')
+        {
+            map[1][1] = 'O';
+            playerTurn = 1;
+        }
+
+    else if(map[1][2] == map[2][2] && map[1][2] == 'X' && map[0][2] == '*')
+        {
+             map[0][2] = 'O';
+             playerTurn = 1;
+        }
+
+    else if(map[0][0] == map[0][2] && map[0][0] == 'X' && map[0][1] == '*')
+        {
+            map[0][1] = 'O';
+            playerTurn = 1;
+        }
+
+    else if(map[1][0] == map[1][2] && map[1][0] == 'X' && map[1][1] == '*')
+        {
+            map[1][1] = 'O';
+            playerTurn = 1;
+        }
+
+    else if(map[2][0] == map[2][2] && map[2][0] == 'X' && map[2][1] == '*')
+        {
+            map[2][1] = 'O';
+            playerTurn = 1;
+        }
+
+    else if(map[0][0] == map[1][1] && map[0][0] == 'X' && map[2][2] == '*')
+        {
+            map[2][2] = 'O';
+            playerTurn = 1;
+        }
+
+    else if(map[1][1] == map[2][2] && map[1][1] == 'X' && map[0][0] == '*')
+        {
+            map[0][0] = 'O';
+            playerTurn = 1;
+        }
+
+    else if(map[0][0] == map[2][2] && map[0][0] == 'X' && map[0][1] == '*')
+        {
+            map[0][1] = 'O';
+            playerTurn = 1;
+        }
+
+    else if(map[2][0] == map[1][1] && map[2][0] == 'X' && map[0][2] == '*')
+        {
+            map[0][2] = 'O';
+            playerTurn = 1;
+        }
+
+    else if(map[1][1] == map[0][2] && map[1][1] == 'X' && map[2][0] == '*')
+        {
+            map[2][0] = 'O';
+            playerTurn = 1;
+        }
+
+    else if(map[2][0] == map[0][2] && map[2][0] == 'X' && map[1][1] == '*')
+        {
+            map[1][1] = 'O';
+            playerTurn = 1;
+        }
+
+    else if(map[0][0] == map[0][2] && map[0][0] == 'X' && map[0][1] == '*')
+        {
+            map[0][1] = 'O';
+            playerTurn = 1;
+        }
+
+    else if(map[0][0] == map[2][0] && map[0][0] == 'X' && map[1][0] == '*')
+        {
+            map[1][0] = 'O';
+            playerTurn = 1;
+        }
+
+    else if(map[0][2] == map[2][2] && map[0][2] == 'X' && map[1][2] == '*')
         {
             map[1][2] = 'O';
             playerTurn = 1;
