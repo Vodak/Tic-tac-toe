@@ -3,7 +3,7 @@
  * 
  * Filename: Tictactoe.cpp
  * 
- * Author: Ceytix <ceytix@mailoo.org>
+ * Author: Ceytix <ceytix@mailoo.org> ; IhFisk <ihfisk42@gmail.com>
  * 
  * Description: Tictactoe class functions
  * 
@@ -90,7 +90,7 @@ void Tictactoe::play()
 	
 	else
 	{
-		cout << "There is no winner" << endl;
+		cout << "Equality" << endl;
 	}
 	
 }
@@ -182,7 +182,7 @@ bool Tictactoe::multi()
 * Win *
 ********/
 
-void Tictactoe::win()
+int Tictactoe::win()
 {
 
     if(map[0][0] == map[0][1] && map[0][0] == map[0][2]) /* Test for every posibilities to win */
@@ -285,7 +285,7 @@ void Tictactoe::win()
 * AI *
 *****/
 
-int Tictactoe::AI()
+void Tictactoe::AI()
 {
 	    /* This is a scan for every possibilities of win or counter possibilities for the enemy of win */
 
@@ -461,11 +461,6 @@ int Tictactoe::AI()
                 {
                     map[0][2] = 'O';
                     playerTurn = 1;
-                }
-
-            else
-                {
-                    win() == 3;
                 }
         }
 	
