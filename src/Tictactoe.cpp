@@ -53,7 +53,7 @@ void Tictactoe::play()
 {
 	bool twoPlayers = multi();
 	
-	while(win()==0) /** the game **/
+	while(win()== 0) /** the game **/
 	{
 		if(twoPlayers)
 		{
@@ -74,7 +74,14 @@ void Tictactoe::play()
 	
 	if(win() == 1)
 	{
-		cout << "The winner is the first player" << endl;
+		if(twoPlayers)
+		{
+			cout << "The winner is the first player" << endl;
+		}
+		else
+		{
+			cout << "The winner is the player" << endl;
+		}
 	}
 	else if(win() == 2)
 	{
@@ -280,322 +287,271 @@ void Tictactoe::AI()
 	    /* This is a scan for every possibilities of win and counter possibilities for the enemy of win */
 
     if(map[0][0] == map[0][1] && map[0][0] == 'O' && map[0][2] == '*')
-        {
-            map[0][2] = 'O';
-            playerTurn = 1;
-        }
+    {
+        map[0][2] = 'O';
+    }
 
     else if(map[0][1] == map[0][2] && map[0][1] == 'O' && map[0][0] == '*')
-        {
-            map[0][0] = 'O';
-            playerTurn = 1;
-        }
+    {
+        map[0][0] = 'O';
+    }
 
     else if(map[1][0] == map[1][1] && map[1][0] == 'O' && map[1][2] == '*')
-        {
-            map[1][2] = 'O';
-            playerTurn = 1;
-        }
+    {
+        map[1][2] = 'O';
+    }
 
     else if(map[1][1] == map[1][2] && map[1][1] == 'O' && map[1][0] == '*')
-        {
-            map[1][0] = 'O';
-            playerTurn = 1;
-        }
+    {
+        map[1][0] = 'O';
+    }
 
     else if(map[2][0] == map[2][1] && map[2][0] == 'O' && map[2][2] == '*')
-        {
-            map[2][2] = 'O';
-            playerTurn = 1;
-        }
+    {
+        map[2][2] = 'O';
+    }
 
     else if(map[2][1] == map[2][2] && map[2][1] == 'O' && map[2][0] == '*')
-        {
-            map[2][0] = 'O';
-            playerTurn = 1;
-        }
+    {
+        map[2][0] = 'O';
+    }
 
     else if(map[0][0] == map[1][0] && map[0][0] == 'O' && map[2][0] == '*')
-        {
-            map[2][0] = 'O';
-            playerTurn = 1;
-        }
+    {
+        map[2][0] = 'O';
+    }
 
     else if(map[1][0] == map[2][0] && map[1][0] == 'O' && map[0][0] == '*')
-        {
-            map[0][0] = 'O';
-            playerTurn = 1;
-        }
+    {
+        map[0][0] = 'O';
+    }
 
     else if(map[0][1] == map[1][1] && map[0][1] == 'O' && map[2][1] == '*')
-        {
-            map[2][1] = 'O';
-            playerTurn = 1;
-        }
+    {
+        map[2][1] = 'O';
+    }
 
     else if(map[1][1] == map[2][1] && map[1][1] == 'O' && map[0][1] == '*')
-        {
-            map[0][1] = 'O';
-            playerTurn = 1;
-        }
+    {
+        map[0][1] = 'O';
+    }
 
     else if(map[0][1] == map[2][1] && map[0][1] == 'O' && map[1][1] == '*')
-        {
-            map[1][1] = 'O';
-            playerTurn = 1;
-        }
+    {
+        map[1][1] = 'O';
+    }
 
     else if(map[1][2] == map[2][2] && map[1][2] == 'O' && map[0][2] == '*')
-        {
-             map[0][2] = 'O';
-             playerTurn = 1;
-        }
+    {
+         map[0][2] = 'O';
+    }
 
     else if(map[0][0] == map[0][2] && map[0][0] == 'O' && map[0][1] == '*')
-        {
-            map[0][1] = 'O';
-            playerTurn = 1;
-        }
+    {
+        map[0][1] = 'O';
+    }
 
     else if(map[1][0] == map[1][2] && map[1][0] == 'O' && map[1][1] == '*')
-        {
-            map[1][1] = 'O';
-            playerTurn = 1;
-        }
+    {
+        map[1][1] = 'O';
+    }
 
     else if(map[2][0] == map[2][2] && map[2][0] == 'O' && map[2][1] == '*')
-        {
-            map[2][1] = 'O';
-            playerTurn = 1;
-        }
+    {
+        map[2][1] = 'O';
+    }
 
     else if(map[0][0] == map[1][1] && map[0][0] == 'O' && map[2][2] == '*')
-        {
-            map[2][2] = 'O';
-            playerTurn = 1;
-        }
+    {
+        map[2][2] = 'O';
+    }
 
     else if(map[1][1] == map[2][2] && map[1][1] == 'O' && map[0][0] == '*')
-        {
-            map[0][0] = 'O';
-            playerTurn = 1;
-        }
+    {
+        map[0][0] = 'O';
+    }
 
     else if(map[0][0] == map[2][2] && map[0][0] == 'O' && map[0][1] == '*')
-        {
-            map[0][1] = 'O';
-            playerTurn = 1;
-        }
+    {
+        map[0][1] = 'O';
+    }
 
     else if(map[2][0] == map[1][1] && map[2][0] == 'O' && map[0][2] == '*')
-        {
-            map[0][2] = 'O';
-            playerTurn = 1;
-        }
+    {
+        map[0][2] = 'O';
+    }
 
     else if(map[1][1] == map[0][2] && map[1][1] == 'O' && map[2][0] == '*')
-        {
-            map[2][0] = 'O';
-            playerTurn = 1;
-        }
+    {
+        map[2][0] = 'O';
+    }
 
     else if(map[2][0] == map[0][2] && map[2][0] == 'O' && map[1][1] == '*')
-        {
-            map[1][1] = 'O';
-            playerTurn = 1;
-        }
+    {
+        map[1][1] = 'O';
+    }
 
     else if(map[0][0] == map[0][2] && map[0][0] == 'O' && map[0][1] == '*')
-        {
-            map[0][1] = 'O';
-            playerTurn = 1;
-        }
+    {
+        map[0][1] = 'O';
+    }
 
     else if(map[0][0] == map[2][0] && map[0][0] == 'O' && map[1][0] == '*')
-        {
-            map[1][0] = 'O';
-            playerTurn = 1;
-        }
+    {
+        map[1][0] = 'O';
+    }
 
     else if(map[0][2] == map[2][2] && map[0][2] == 'O' && map[1][2] == '*')
-        {
-            map[1][2] = 'O';
-            playerTurn = 1;
-        }
-        
+    {
+        map[1][2] = 'O';
+    }
+    
     else if(map[0][0] == map[0][1] && map[0][0] == 'X' && map[0][2] == '*')
-        {
-            map[0][2] = 'O';
-            playerTurn = 1;
-        }
+    {
+        map[0][2] = 'O';
+    }
 
     else if(map[0][1] == map[0][2] && map[0][1] == 'X' && map[0][0] == '*')
-        {
-            map[0][0] = 'O';
-            playerTurn = 1;
-        }
+    {
+        map[0][0] = 'O';
+    }
 
     else if(map[1][0] == map[1][1] && map[1][0] == 'X' && map[1][2] == '*')
-        {
-            map[1][2] = 'O';
-            playerTurn = 1;
-        }
+    {
+        map[1][2] = 'O';
+    }
 
     else if(map[1][1] == map[1][2] && map[1][1] == 'X' && map[1][0] == '*')
-        {
-            map[1][0] = 'O';
-            playerTurn = 1;
-        }
+    {
+        map[1][0] = 'O';
+    }
 
     else if(map[2][0] == map[2][1] && map[2][0] == 'X' && map[2][2] == '*')
-        {
-            map[2][2] = 'O';
-            playerTurn = 1;
-        }
+    {
+        map[2][2] = 'O';
+    }
 
     else if(map[2][1] == map[2][2] && map[2][1] == 'X' && map[2][0] == '*')
-        {
-            map[2][0] = 'O';
-            playerTurn = 1;
-        }
+    {
+        map[2][0] = 'O';
+    }
 
     else if(map[0][0] == map[1][0] && map[0][0] == 'X' && map[2][0] == '*')
-        {
-            map[2][0] = 'O';
-            playerTurn = 1;
-        }
+    {
+        map[2][0] = 'O';
+    }
 
     else if(map[1][0] == map[2][0] && map[1][0] == 'X' && map[0][0] == '*')
-        {
-            map[0][0] = 'O';
-            playerTurn = 1;
-        }
+    {
+        map[0][0] = 'O';
+    }
 
     else if(map[0][1] == map[1][1] && map[0][1] == 'X' && map[2][1] == '*')
-        {
-            map[2][1] = 'O';
-            playerTurn = 1;
-        }
+    {
+        map[2][1] = 'O';
+    }
 
     else if(map[1][1] == map[2][1] && map[1][1] == 'X' && map[0][1] == '*')
-        {
-            map[0][1] = 'O';
-            playerTurn = 1;
-        }
+    {
+        map[0][1] = 'O';
+    }
 
     else if(map[0][1] == map[2][1] && map[0][1] == 'X' && map[1][1] == '*')
-        {
-            map[1][1] = 'O';
-            playerTurn = 1;
-        }
+    {
+        map[1][1] = 'O';
+    }
 
     else if(map[1][2] == map[2][2] && map[1][2] == 'X' && map[0][2] == '*')
-        {
-             map[0][2] = 'O';
-             playerTurn = 1;
-        }
+    {
+         map[0][2] = 'O';
+    }
 
     else if(map[0][0] == map[0][2] && map[0][0] == 'X' && map[0][1] == '*')
-        {
-            map[0][1] = 'O';
-            playerTurn = 1;
-        }
+    {
+        map[0][1] = 'O';
+    }
 
     else if(map[1][0] == map[1][2] && map[1][0] == 'X' && map[1][1] == '*')
-        {
-            map[1][1] = 'O';
-            playerTurn = 1;
-        }
+    {
+        map[1][1] = 'O';
+    }
 
     else if(map[2][0] == map[2][2] && map[2][0] == 'X' && map[2][1] == '*')
-        {
-            map[2][1] = 'O';
-            playerTurn = 1;
-        }
+    {
+        map[2][1] = 'O';
+    }
 
     else if(map[0][0] == map[1][1] && map[0][0] == 'X' && map[2][2] == '*')
-        {
-            map[2][2] = 'O';
-            playerTurn = 1;
-        }
+    {
+        map[2][2] = 'O';
+    }
 
     else if(map[1][1] == map[2][2] && map[1][1] == 'X' && map[0][0] == '*')
-        {
-            map[0][0] = 'O';
-            playerTurn = 1;
-        }
+    {
+        map[0][0] = 'O';
+    }
 
     else if(map[0][0] == map[2][2] && map[0][0] == 'X' && map[0][1] == '*')
-        {
-            map[0][1] = 'O';
-            playerTurn = 1;
-        }
+    {
+        map[0][1] = 'O';
+    }
 
     else if(map[2][0] == map[1][1] && map[2][0] == 'X' && map[0][2] == '*')
-        {
-            map[0][2] = 'O';
-            playerTurn = 1;
-        }
+    {
+        map[0][2] = 'O';
+    }
 
     else if(map[1][1] == map[0][2] && map[1][1] == 'X' && map[2][0] == '*')
-        {
-            map[2][0] = 'O';
-            playerTurn = 1;
-        }
+    {
+        map[2][0] = 'O';
+    }
 
     else if(map[2][0] == map[0][2] && map[2][0] == 'X' && map[1][1] == '*')
-        {
-            map[1][1] = 'O';
-            playerTurn = 1;
-        }
+    {
+        map[1][1] = 'O';
+    }
 
     else if(map[0][0] == map[0][2] && map[0][0] == 'X' && map[0][1] == '*')
-        {
-            map[0][1] = 'O';
-            playerTurn = 1;
-        }
+    {
+        map[0][1] = 'O';
+    }
 
     else if(map[0][0] == map[2][0] && map[0][0] == 'X' && map[1][0] == '*')
-        {
-            map[1][0] = 'O';
-            playerTurn = 1;
-        }
+    {
+        map[1][0] = 'O';
+    }
 
     else if(map[0][2] == map[2][2] && map[0][2] == 'X' && map[1][2] == '*')
-        {
-            map[1][2] = 'O';
-            playerTurn = 1;
-        }
+    {
+        map[1][2] = 'O';
+    }
 
         /* End of the scan */
 
     else
+    {
+        /* Now the AI will play on the corners */
+
+		if(map[0][0] == '*')
+	    {
+	        map[0][0] = 'O';
+	    }
+
+        else if(map[2][0] == '*')
         {
-            /* Now the AI will play on the edges */
-
-            if(map[0][0] != '*')
-                {
-                    map[0][0] = 'O';
-                    playerTurn = 1;
-                }
-
-            else if(map[2][0] != '*')
-                {
-                    map[2][0] = 'O';
-                    playerTurn = 1;
-                }
-
-            else if(map[2][2] != '*')
-                {
-                    map[2][2] = 'O';
-                    playerTurn = 1;
-                }
-
-            else if(map[0][2] != '*')
-                {
-                    map[0][2] = 'O';
-                    playerTurn = 1;
-                }
+            map[2][0] = 'O';
         }
+
+        else if(map[2][2] == '*')
+        {
+            map[2][2] = 'O';
+        }
+
+        else if(map[0][2] == '*')
+        {
+            map[0][2] = 'O';
+        }
+    }
 	
+	playerTurn = 1;
 }
