@@ -490,9 +490,9 @@ void Tictactoe::AI()
         map[0][0] = 'O';
     }
 
-    else if(map[0][0] == map[2][2] && map[0][0] == 'X' && map[0][1] == '*')
+    else if(map[0][0] == map[2][2] && map[0][0] == 'X' && map[1][1] == '*')
     {
-        map[0][1] = 'O';
+        map[1][1] = 'O';
     }
 
     else if(map[2][0] == map[1][1] && map[2][0] == 'X' && map[0][2] == '*')
