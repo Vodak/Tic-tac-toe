@@ -13,29 +13,18 @@
  
 #include <iostream>
 #include "Tictactoe.cpp"
+#include "functions.cpp"
 
 using namespace std;
 
 int main()
-{
-	
-	char replay(' ');
-	Tictactoe game;
-		
+{		
 	do
 	{
+		Tictactoe game;
 		game.play();
-		
-		/** replay **/
-		
-		cout << "Do you want to play again ? yes(y) / no(n)" << endl;
-		
-		while(replay!='y' && replay!='n')
-		{
-			cin >> replay;
-		}
-		
-	}while(replay=='y');
+	}
+	while(playAgain());
 	
 	return 0;
 }
