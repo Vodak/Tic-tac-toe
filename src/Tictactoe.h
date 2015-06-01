@@ -26,6 +26,7 @@ class Tictactoe
 	bool multi();
 	void AI();
 	int win();
+	void print();
 	
 	private:
 	

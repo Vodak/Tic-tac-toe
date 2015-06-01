@@ -72,6 +72,8 @@ void Tictactoe::play()
 		}
 	}
 	
+	print(); //the map
+	
 	if(win() == 1)
 	{
 		if(twoPlayers)
@@ -108,10 +110,7 @@ void Tictactoe::play()
 
 void Tictactoe::turn()
 {
-	cout << "  1 2 3\n" << endl;
-	cout << "1 " << map[0][0] << ' ' << map[0][1] << ' ' << map[0][2] << '\n' << endl;
-	cout << "2 " << map[1][0] << ' ' << map[1][1] << ' ' << map[1][2] << '\n' << endl;
-	cout << "3 " << map[2][0] << ' ' << map[2][1] << ' ' << map[2][2] << endl;
+	print(); //the map
 	
 	if(playerTurn==1)
 	{
@@ -554,4 +553,16 @@ void Tictactoe::AI()
     }
 	
 	playerTurn = 1;
+}
+
+/********
+* print *
+********/
+
+void Tictactoe::print()
+{
+	cout << "  1 2 3\n" << endl;
+	cout << "1 " << map[0][0] << ' ' << map[0][1] << ' ' << map[0][2] << '\n' << endl;
+	cout << "2 " << map[1][0] << ' ' << map[1][1] << ' ' << map[1][2] << '\n' << endl;
+	cout << "3 " << map[2][0] << ' ' << map[2][1] << ' ' << map[2][2] << endl;
 }
