@@ -530,26 +530,37 @@ void Tictactoe::AI()
     else
     {
         /* Now the AI will play on the corners */
+        
+        bool corner = false;
+		do
+		{
+			int choice = rand()%4+1;
+		
+			if(map[0][0] == '*' && choice == 1)
+			{
+			    map[0][0] = 'O';
+			    corner = true;
+			}
 
-		if(map[0][0] == '*')
-	    {
-	        map[0][0] = 'O';
-	    }
+		    else if(map[2][0] == '*' && choice == 2)
+		    {
+		        map[2][0] = 'O';
+			    corner = true;
+		    }
 
-        else if(map[2][0] == '*')
-        {
-            map[2][0] = 'O';
-        }
+		    else if(map[2][2] == '*' && choice == 2)
+		    {
+		        map[2][2] = 'O';
+		        corner = true;
+		    }
 
-        else if(map[2][2] == '*')
-        {
-            map[2][2] = 'O';
-        }
-
-        else if(map[0][2] == '*')
-        {
-            map[0][2] = 'O';
-        }
+		    else if(map[0][2] == '*' && choice == 2)
+		    {
+		        map[0][2] = 'O';
+		        corner = true;
+		    }
+		}
+		while(!corner);
     }
 	
 	playerTurn = 1;
