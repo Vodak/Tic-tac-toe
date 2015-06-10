@@ -20,21 +20,51 @@ using namespace std;
 
 bool playAgain()
 {
-	char replay (' ');
+	SDL_Delay(1500);
 	
-	cout << "Do you want to play again ? yes(y) / no(n)" << endl;
+	SDL_Surface *screen, *background;
+	SDL_Rect backgroundPos;
+	SDL_Event replayEvent;
+	
+	screen = SDL_SetVideoMode(800, 800, 32, SDL_HWSURFACE | SDL_DOUBLEBUF);
+	background = IMG_Load("pictures/retry.png");
+
+	backgroundPos.x = 0;
+	backgroundPos.y = 0;
+	
+	while(1)
+	{
+		SDL_WaitEvent(&replayEvent);
 		
-	while(replay!='y' && replay!='n')
-	{
-		cin >> replay;
-	}
-	
-	if(replay == 'y')
-	{
-		return true;
-	}
-	else
-	{
-		return false;
+		switch(replayEvent.type)
+		{
+			case SDL_KEYDOWN:
+				if(replayEvent.key.keysym.sym == SDLK_ESCAPE)
+				{
+					return false;
+				}
+			break;
+			
+			case SDL_QUIT:
+				return false;
+			break;
+			
+			case SDL_MOUSEBUTTONDOWN:
+				if(replayEvent.button.button == SDL_BUTTON_LEFT)
+				{
+					if(replayEvent.button.x >= 150 && replayEvent.button.x <= 650 && replayEvent.button.y >= 360 && replayEvent.button.y <= 440) /** yes **/
+					{
+						return true;
+					}
+					if(replayEvent.button.x >= 150 && replayEvent.button.x <= 650 && replayEvent.button.y >= 511 && replayEvent.button.y <= 591) /** no **/
+					{
+						return false;
+					}
+				}
+			break;
+		}
+		
+		SDL_BlitSurface(background, NULL, screen, &backgroundPos);
+		SDL_Flip(screen);
 	}
 }
