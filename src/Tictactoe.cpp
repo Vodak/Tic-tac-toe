@@ -10,10 +10,13 @@
  * Created: 29/04/15
  * =========================
  **/
- 
+
+#include <iostream>
 #include <ctime>
 #include <cstdlib>
 #include <string>
+#include <SDL.h>
+#include <SDL_image.h>
 #include "Tictactoe.h"
 
 using namespace std;
@@ -131,7 +134,7 @@ void Tictactoe::turn()
 		{
 			cin >> line;
 			line--;
-		}while(line<0 || line>2);
+		} while(line<0 || line>2);
 		
 		cout << "Enter the column:" << endl;
 		
@@ -139,7 +142,7 @@ void Tictactoe::turn()
 		{
 			cin >> column;
 			column--;
-		}while(column<0 || column>2);
+		} while(column<0 || column>2);
 
 		if(map[line][column] != '*')
 		{
@@ -572,8 +575,55 @@ void Tictactoe::AI()
 
 void Tictactoe::print()
 {
-	cout << "  1 2 3\n" << endl;
-	cout << "1 " << map[0][0] << ' ' << map[0][1] << ' ' << map[0][2] << '\n' << endl;
-	cout << "2 " << map[1][0] << ' ' << map[1][1] << ' ' << map[1][2] << '\n' << endl;
-	cout << "3 " << map[2][0] << ' ' << map[2][1] << ' ' << map[2][2] << endl;
+	SDL_Surface *screen = NULL,*background = NULL, *player = NULL, *circle = NULL, *cross = NULL;
+	SDL_Rect backgroundPos, playerPos, circlePos, crossPos;
+	
+	screen = SDL_SetVideoMode(800, 800, 32, SDL_HWSURFACE | SDL_DOUBLEBUF);
+	background = IMG_Load("pictures/background.png");
+	circle = IMG_Load("pictures/circle.png");
+	cross = IMG_Load("pictures/cross.png");
+	if(playerTurn == 1)
+	{
+		player = IMG_Load("pictures/player1.png");
+	}
+	else
+	{
+		player = IMG_Load("pictures/player2.png");
+	}
+	
+	backgroundPos.x = 0;
+	backgroundPos.y = 0;
+	
+	playerPos.x = 5;
+	playerPos.y = 755;
+	
+	SDL_BlitSurface(background, NULL, screen, &backgroundPos);
+	SDL_BlitSurface(player, NULL, screen, &playerPos);
+	
+	for(int i=0; i<=2; i++)
+	{
+		for(int j=0; j<=2; j++)
+		{
+			if(map[i][j] == 'O')
+			{
+				circlePos.x = 280*j;
+				circlePos.y = 280*i;
+				SDL_BlitSurface(circle, NULL, screen, &circlePos);
+			}
+			else if(map[i][j] == 'X')
+			{
+				crossPos.x = 280*j;
+				crossPos.y = 280*i;
+				SDL_BlitSurface(cross, NULL, screen, &crossPos);
+			}
+		}
+	}
+	
+	SDL_Flip(screen);
+	
+	SDL_FreeSurface(player);
+	SDL_FreeSurface(circle);
+	SDL_FreeSurface(cross);
+	SDL_FreeSurface(background);
+	SDL_FreeSurface(screen);
 }

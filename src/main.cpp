@@ -12,13 +12,18 @@
  **/
  
 #include <iostream>
+#include <SDL.h>
+#include <SDL_image.h>
 #include "Tictactoe.cpp"
 #include "functions.cpp"
 
 using namespace std;
 
 int main()
-{		
+{	
+
+	SDL_Init(SDL_INIT_VIDEO);
+	
 	do
 	{
 		Tictactoe game;
@@ -26,5 +31,6 @@ int main()
 	}
 	while(playAgain());
 	
+	SDL_Quit();
 	return 0;
 }

@@ -11,8 +11,8 @@
  * =========================
  **/
  
-#ifndef TICTACTOE
-#define TICTACTOE
+#ifndef TICTACTOE_H_INCLUDED
+#define TICTACTOE_H_INCLUDED
 
 class Tictactoe
 {

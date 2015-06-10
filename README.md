@@ -1,5 +1,5 @@
 # Tic-tac-toe
-[C++] A little and funny game
+[WIP] [C++] A little and funny game
 ___
 
 Contributors:
