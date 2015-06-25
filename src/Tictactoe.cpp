@@ -575,7 +575,7 @@ void Tictactoe::AI()
 
 void Tictactoe::print()
 {
-	SDL_Surface *screen = NULL,*background = NULL, *player = NULL, *circle = NULL, *cross = NULL;
+	SDL_Surface *screen = 0,*background = 0, *player = 0, *circle = 0, *cross = 0;
 	SDL_Rect backgroundPos, playerPos, circlePos, crossPos;
 	
 	screen = SDL_SetVideoMode(800, 800, 32, SDL_HWSURFACE | SDL_DOUBLEBUF);
@@ -597,8 +597,8 @@ void Tictactoe::print()
 	playerPos.x = 5;
 	playerPos.y = 755;
 	
-	SDL_BlitSurface(background, NULL, screen, &backgroundPos);
-	SDL_BlitSurface(player, NULL, screen, &playerPos);
+	SDL_BlitSurface(background, 0, screen, &backgroundPos);
+	SDL_BlitSurface(player, 0, screen, &playerPos);
 	
 	for(int i=0; i<=2; i++)
 	{
@@ -608,13 +608,13 @@ void Tictactoe::print()
 			{
 				circlePos.x = 280*j;
 				circlePos.y = 280*i;
-				SDL_BlitSurface(circle, NULL, screen, &circlePos);
+				SDL_BlitSurface(circle, 0, screen, &circlePos);
 			}
 			else if(map[i][j] == 'X')
 			{
 				crossPos.x = 280*j;
 				crossPos.y = 280*i;
-				SDL_BlitSurface(cross, NULL, screen, &crossPos);
+				SDL_BlitSurface(cross, 0, screen, &crossPos);
 			}
 		}
 	}
