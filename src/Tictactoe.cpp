@@ -115,51 +115,83 @@ void Tictactoe::turn()
 {
 	print(); //the map
 	
-	if(playerTurn==1)
-	{
-		cout << "You are P1 - You have X" << endl;
-	}
-	else
-	{
-		cout << "You are P2 - You have O" << endl;
-	}
+	bool quit(false);
+	SDL_Event event;
 	
-	int column(0), line(0);
-	
-	do
+	while(!quit)
 	{
-		cout << "Where do you want to play ?\nEnter the line:" << endl;
-	
-		do
-		{
-			cin >> line;
-			line--;
-		} while(line<0 || line>2);
+		SDL_WaitEvent(&event);
 		
-		cout << "Enter the column:" << endl;
-		
-		do
+		switch(event.type)
 		{
-			cin >> column;
-			column--;
-		} while(column<0 || column>2);
-
-		if(map[line][column] != '*')
-		{
-			cout << "It's not possible" << endl;
+			case SDL_QUIT:
+				exit(0);
+			break;
+			
+			case SDL_KEYDOWN:
+				if(event.key.keysym.sym == SDLK_ESCAPE)
+					exit(0);
+			break;
+			
+			case SDL_MOUSEBUTTONDOWN:
+				if(event.button.button == SDL_BUTTON_LEFT)
+				{
+					int x, y;
+					if(event.button.x <= 240)
+					{
+						x = 0;
+					}
+					else if(event.button.x >= 280 && event.button.x <= 520)
+					{
+						x = 1;
+					}
+					else if(event.button.x >= 560)
+					{
+						x = 2;
+					}
+					else
+					{
+						x = 3;
+					}
+					
+					if(event.button.y <= 240)
+					{
+						y = 0;
+					}
+					else if(event.button.y >= 280 && event.button.y <= 520)
+					{
+						y = 1;
+					}
+					else if(event.button.y >= 560)
+					{
+						y = 2;
+					}
+					else
+					{
+						y = 3;
+					}
+					
+					if(x != 3 && y != 3)
+					{
+						if(map[y][x] == '*')
+						{
+							if(playerTurn == 1)
+							{
+								map[y][x] = 'X';
+								playerTurn = 2;
+								quit = true;
+							}
+							else
+							{
+								map[y][x] = 'O';
+								playerTurn = 1;
+								quit = true;
+							}
+						}
+					}
+				}
+			break;
 		}
-		
-	} while(map[line][column] != '*');
-	
-	if(playerTurn==1)
-	{
-		map[line][column] = 'X';
-		playerTurn = 2;
-	}
-	else
-	{
-		map[line][column] = 'O';
-		playerTurn = 1;
 	}
 }
 
