@@ -611,6 +611,7 @@ void Tictactoe::print()
 	SDL_Rect backgroundPos, playerPos, circlePos, crossPos;
 	
 	screen = SDL_SetVideoMode(800, 800, 32, SDL_HWSURFACE | SDL_DOUBLEBUF);
+	SDL_WM_SetCaption("Tic-Tac-Toe by Vodak", 0);
 	background = IMG_Load("pictures/background.png");
 	circle = IMG_Load("pictures/circle.png");
 	cross = IMG_Load("pictures/cross.png");

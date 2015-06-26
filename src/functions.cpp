@@ -26,6 +26,7 @@ bool playAgain()
 	SDL_Event replayEvent;
 	
 	screen = SDL_SetVideoMode(800, 800, 32, SDL_HWSURFACE | SDL_DOUBLEBUF);
+	SDL_WM_SetCaption("Tic-Tac-Toe by Vodak", 0);
 	background = IMG_Load("pictures/retry.png");
 
 	backgroundPos.x = 0;
