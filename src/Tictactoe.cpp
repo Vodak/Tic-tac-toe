@@ -173,17 +173,17 @@ void Tictactoe::turn()
 					
 					if(x != 3 && y != 3)
 					{
-						if(map[y][x] == '*')
+						if(map[x][y] == '*')
 						{
 							if(playerTurn == 1)
 							{
-								map[y][x] = 'X';
+								map[x][y] = 'X';
 								playerTurn = 2;
 								quit = true;
 							}
 							else
 							{
-								map[y][x] = 'O';
+								map[x][y] = 'O';
 								playerTurn = 1;
 								quit = true;
 							}
@@ -226,7 +226,7 @@ bool Tictactoe::multi()
 int Tictactoe::win()
 {
 
-    if(map[0][0] == map[0][1] && map[0][0] == map[0][2] && map[0][0] != '*') /* Test for every posibilities to win */
+    if(map[0][0] == map[0][1] && map[0][0] == map[0][2] && map[0][0] != '*') /** Test for every posibilities to win **/
     {
         if(map[0][0] == 'X')
             return 1;
@@ -304,7 +304,7 @@ int Tictactoe::win()
  
     }
     
-    else if(map[0][0] != '*' && map[0][1] != '*' && map[0][2] != '*' && map[1][0] != '*' && map[1][1] != '*' && map[1][2] != '*' && map[2][0] != '*' && map[2][1] != '*' && map[2][2] != '*')
+    else if(map[0][0] != '*' && map[0][1] != '*' && map[0][2] != '*' && map[1][0] != '*' && map[1][1] != '*' && map[1][2] != '*' && map[2][0] != '*' && map[2][1] != '*' && map[2][2] != '*') /** equality **/
     {
     	return 3;
     }
@@ -318,7 +318,7 @@ int Tictactoe::win()
 
 void Tictactoe::AI()
 {
-	    /* This is a scan for every possibilities of win and counter possibilities for the enemy of win */
+	/** This is a scan for every possibilities of win and counter possibilities of win for the enemy **/
 
     if(map[0][0] == map[0][1] && map[0][0] == 'O' && map[0][2] == '*')
     {
@@ -560,42 +560,78 @@ void Tictactoe::AI()
         map[1][2] = 'O';
     }
 
-        /* End of the scan */
+        /** End of the scan **/
 
     else
-    {
-        /* Now the AI will play on the corners */
+    {   
+        bool played = false;
         
-        bool corner = false;
-		do
-		{
-			int choice = rand()%4+1;
-		
-			if(map[0][0] == '*' && choice == 1)
+        if(map[0][0]=='*' || map[2][0]=='*' || map[2][2]=='*' || map[0][2]=='*') /** if at least 1 corner is free **/
+        {
+			do
 			{
-			    map[0][0] = 'O';
-			    corner = true;
+				 /** Now the AI will play on the corners **/
+				 
+				int choice = rand()%4+1;
+		
+				if(map[0][0] == '*' && choice == 1)
+				{
+					map[0][0] = 'O';
+					played = true;
+				}
+
+				else if(map[2][0] == '*' && choice == 2)
+				{
+				    map[2][0] = 'O';
+					played = true;
+				}
+
+				else if(map[2][2] == '*' && choice == 3)
+				{
+				    map[2][2] = 'O';
+				    played = true;
+				}
+
+				else if(map[0][2] == '*' && choice == 4)
+				{
+				    map[0][2] = 'O';
+				    played = true;
+				}
 			}
-
-		    else if(map[2][0] == '*' && choice == 2)
-		    {
-		        map[2][0] = 'O';
-			    corner = true;
-		    }
-
-		    else if(map[2][2] == '*' && choice == 2)
-		    {
-		        map[2][2] = 'O';
-		        corner = true;
-		    }
-
-		    else if(map[0][2] == '*' && choice == 2)
-		    {
-		        map[0][2] = 'O';
-		        corner = true;
-		    }
+			while(!played);
 		}
-		while(!corner);
+		else /** all corners are used **/
+		{
+			do
+			{
+				int choice = rand()%4+1;
+		
+				if(map[0][1] == '*' && choice == 1)
+				{
+					map[0][1] = 'O';
+					played = true;
+				}
+
+				else if(map[1][0] == '*' && choice == 2)
+				{
+				    map[1][0] = 'O';
+					played = true;
+				}
+
+				else if(map[2][1] == '*' && choice == 3)
+				{
+				    map[2][1] = 'O';
+				    played = true;
+				}
+
+				else if(map[1][2] == '*' && choice == 4)
+				{
+				    map[1][2] = 'O';
+				    played = true;
+				}
+			}
+			while(!played);
+		}
     }
 	
 	playerTurn = 1;
@@ -639,14 +675,14 @@ void Tictactoe::print()
 		{
 			if(map[i][j] == 'O')
 			{
-				circlePos.x = 280*j;
-				circlePos.y = 280*i;
+				circlePos.x = 280*i;
+				circlePos.y = 280*j;
 				SDL_BlitSurface(circle, 0, screen, &circlePos);
 			}
 			else if(map[i][j] == 'X')
 			{
-				crossPos.x = 280*j;
-				crossPos.y = 280*i;
+				crossPos.x = 280*i;
+				crossPos.y = 280*j;
 				SDL_BlitSurface(cross, 0, screen, &crossPos);
 			}
 		}
