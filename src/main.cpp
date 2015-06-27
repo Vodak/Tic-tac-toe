@@ -28,7 +28,7 @@ int main()
 	{
 		Tictactoe game;
 		game.play();
-		SDL_Delay(1500);
+		SDL_Delay(250);
 	}
 	while(playAgain());
 	

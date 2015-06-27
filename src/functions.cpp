@@ -23,7 +23,7 @@ bool playAgain()
 	
 	SDL_Surface *screen, *background;
 	SDL_Rect backgroundPos;
-	SDL_Event replayEvent;
+	SDL_Event event;
 	
 	screen = SDL_SetVideoMode(800, 800, 32, SDL_HWSURFACE | SDL_DOUBLEBUF);
 	SDL_WM_SetCaption("Tic-Tac-Toe by Vodak", 0);
@@ -37,12 +37,12 @@ bool playAgain()
 	
 	while(!quit)
 	{
-		SDL_WaitEvent(&replayEvent);
+		SDL_PollEvent(&event);
 		
-		switch(replayEvent.type)
+		switch(event.type)
 		{
 			case SDL_KEYDOWN:
-				if(replayEvent.key.keysym.sym == SDLK_ESCAPE)
+				if(event.key.keysym.sym == SDLK_ESCAPE)
 				{
 					replay = false;
 					quit = true;
@@ -55,14 +55,14 @@ bool playAgain()
 			break;
 			
 			case SDL_MOUSEBUTTONDOWN:
-				if(replayEvent.button.button == SDL_BUTTON_LEFT)
+				if(event.button.button == SDL_BUTTON_LEFT)
 				{
-					if(replayEvent.button.x >= 150 && replayEvent.button.x <= 650 && replayEvent.button.y >= 360 && replayEvent.button.y <= 440) /** yes **/
+					if(event.button.x >= 150 && event.button.x <= 650 && event.button.y >= 360 && event.button.y <= 440) /** YES **/
 					{
 						replay = true;
 						quit = true;
 					}
-					if(replayEvent.button.x >= 150 && replayEvent.button.x <= 650 && replayEvent.button.y >= 511 && replayEvent.button.y <= 591) /** no **/
+					if(event.button.x >= 150 && event.button.x <= 650 && event.button.y >= 511 && event.button.y <= 591) /** NO **/
 					{
 						replay = false;
 						quit = true;

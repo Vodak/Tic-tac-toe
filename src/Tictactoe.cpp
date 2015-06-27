@@ -120,7 +120,7 @@ void Tictactoe::turn()
 	
 	while(!quit)
 	{
-		SDL_WaitEvent(&event);
+		SDL_PollEvent(&event);
 		
 		switch(event.type)
 		{
@@ -207,6 +207,7 @@ bool Tictactoe::multi()
 	while(choice!='p' && choice!='a')
 	{
 		cin >> choice;
+		/** bug pour léo **/
 	}
 	
 	if(choice == 'p')
