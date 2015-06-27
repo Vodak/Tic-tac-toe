@@ -22,7 +22,7 @@ sudo apt-get install libsdl-ttf2.0-dev
 
 Download the source code
 
-Go in the directory "Tic-tac-toe"
+Go into the directory "Tic-tac-toe"
 
 Use the command `make && ./Tic-tac-toe`
 
