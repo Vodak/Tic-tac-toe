@@ -5,3 +5,6 @@ FLAGS = -Wall -Wextra
 
 all:
 	$(CC) src/main.cpp -o $(EXEC) $(LIBS) $(FLAGS)
+
+clean:
+	rm $(EXEC)
